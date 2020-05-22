@@ -107,11 +107,12 @@ class QueryUtils {
             JSONObject baseJsonResponse = new JSONObject(storyJSON);
 
             JSONObject response = baseJsonResponse.getJSONObject("response");
-            JSONArray storyArray = response.getJSONArray("results");
+            JSONArray results = response.getJSONArray("results");
 
-            for (int i = 0; i < storyArray.length(); i++) {
+            for (int i = 0; i < results.length(); i++) {
 
-                JSONObject currentStory = storyArray.getJSONObject(i);
+                JSONObject tags = results.getJSONObject(i).getJSONArray("tags").getJSONObject(i);
+                JSONObject currentStory = results.getJSONObject(i);
 
                 String date = currentStory.getString("webPublicationDate");
 
@@ -121,7 +122,9 @@ class QueryUtils {
 
                 String topic = currentStory.getString("sectionName");
 
-                Story story = new Story(title, topic, date, url);
+                String author = tags.getString("webTitle");
+
+                Story story = new Story(title, topic, date, url, author);
                 stories.add(story);
             }
 

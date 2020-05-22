@@ -44,6 +44,10 @@ public class StoryAdapter extends ArrayAdapter<Story> {
         String storyTopic = currentStory.getStoryTopic();
         textStoryTopic.setText(storyTopic);
 
+        TextView textStoryAuthor = listItemView.findViewById(R.id.story_author);
+        String storyAuthor = currentStory.getStoryAuthor();
+        textStoryAuthor.setText(storyAuthor);
+
         return listItemView;
     }
 

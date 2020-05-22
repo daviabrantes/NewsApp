@@ -80,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("api-key", "test");
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+
         return new StoryLoader(this, uriBuilder.toString());
     }
 
