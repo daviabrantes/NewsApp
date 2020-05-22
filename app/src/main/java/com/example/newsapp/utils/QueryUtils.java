@@ -111,7 +111,7 @@ class QueryUtils {
 
             for (int i = 0; i < results.length(); i++) {
 
-                JSONObject tags = results.getJSONObject(i).getJSONArray("tags").getJSONObject(i);
+                JSONObject tags = results.getJSONObject(i).getJSONArray("tags").getJSONObject(0);
                 JSONObject currentStory = results.getJSONObject(i);
 
                 String date = currentStory.getString("webPublicationDate");

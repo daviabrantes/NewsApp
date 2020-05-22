@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="80dp"
     android:layout_margin="10dp">
 
     <View
@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Story Author"
         android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
         android:textColor="@android:color/darker_gray"/>
 
     <TextView
